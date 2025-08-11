@@ -18,6 +18,9 @@ function NavBar() {
       <NavLink to="/AboutMe" className={addCustomClassName}>
         About me
       </NavLink>
+      <NavLink to="/AboutUs" className={addCustomClassName}>
+        About Us
+      </NavLink>
     </nav>
   );
 }
