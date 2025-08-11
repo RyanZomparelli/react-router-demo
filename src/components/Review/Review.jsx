@@ -1,7 +1,12 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import "./Review.css";
 
 function Review({ reviews }) {
+  //The useNavigate hook allows us to navigate to a specific or back to a previous
+  //page conveniently. Use it as a callBack to the onClick attribute of a button
+  // and pass it the path you want to navigate to as a string. Alternativly pass it
+  // the value -1 to return to the previous page.
+  const navigagateBack = useNavigate();
   //The useParams() hook creates an object with one property called reviewId which maps
   //to the id of the link that is clicked on.
   const { reviewId } = useParams();
@@ -21,6 +26,9 @@ function Review({ reviews }) {
           <p className="review__rating">
             Final rating: {reviews[index]?.rating}
           </p>
+          <button type="button" onClick={() => navigagateBack("/Reviews")}>
+            Back to the review list 😎
+          </button>
         </div>
       )}
     </div>
