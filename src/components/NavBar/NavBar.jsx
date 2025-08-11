@@ -7,6 +7,8 @@ function NavBar() {
     return "menu__link" + (isActive ? " menu__link_active" : "");
   }
 
+  //The NavLink component is just like the Link component but takes a special attribute for styling
+
   return (
     <nav className="menu">
       <NavLink to="/" className={addCustomClassName}>
